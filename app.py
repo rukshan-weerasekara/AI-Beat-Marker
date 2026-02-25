@@ -7,6 +7,8 @@ import os
 st.set_page_config(page_title="AI Beat Marker", page_icon="🎬", layout="centered")
 
 st.title("🎬 AI Beat-to-XML Marker Generator")
+st.markdown(f"**Developed by Rukshan Weerasekara** | Creative Technologist")
+st.markdown("---")
 st.markdown("Automate your Premiere Pro workflow using AI. Upload your audio and get the XML markers instantly!")
 
 
@@ -19,7 +21,7 @@ audio_file = st.file_uploader("Upload Audio File (MP3, WAV)", type=["mp3", "wav"
 
 if audio_file is not None:
     with st.spinner("🔍 AI is analyzing the beats..."):
-        # Temporary save for librosa to read
+        
         with open("temp_audio.mp3", "wb") as f:
             f.write(audio_file.getbuffer())
 
@@ -68,7 +70,7 @@ if audio_file is not None:
         st.download_button(
             label="📥 Download XML for Premiere Pro",
             data=xml_content,
-            file_name="Ruka_Beat_Markers.xml",
+            file_name="RuKiYa_Beat_Markers.xml",
             mime="application/xml"
         )
         
